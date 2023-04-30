@@ -1,0 +1,160 @@
+from karel.stanfordkarel import *
+
+def turn_right():
+    for i in range(3):
+        turn_left()
+def goback():
+    turn_left()
+    turn_left()
+    move()
+    turn_left()
+    turn_left()
+def diagonallyrightdown():
+    if facing_east():
+        move()
+        turn_right()
+        move()
+        turn_left()
+def diagonallyleftup():
+    if facing_east():
+        move()
+        turn_left()
+        move()
+        turn_right()
+    else:
+        move()
+        turn_right()
+def placethreebeepers():
+    for i in range(3):
+        put_beeper()
+        move()
+def placetwobeepers():
+    for i in range(2):
+        put_beeper()
+        move()
+def m():
+    turn_left()
+    put_beeper()
+    for i in range(6):
+        move()
+        put_beeper()
+    turn_right()
+    for i in range (2):
+        diagonallyrightdown()
+        put_beeper()
+    for i in range(2):    
+        diagonallyleftup()
+        put_beeper()
+    turn_right()
+    for i in range(6):
+        move()
+        put_beeper()
+    turn_left()
+    for i in range(2):
+        move()
+def i():
+    for i in range(3):
+        put_beeper()
+        move()
+    for i in range(2):
+        goback()
+    turn_left()
+    for i in range(6):
+        move()
+        put_beeper()
+    turn_left()
+    move()
+    put_beeper()
+    for i in range(2):
+        goback()
+    put_beeper()
+    turn_left()
+    while front_is_clear():
+        move()
+    turn_left()
+    for i in range(2):
+        move()
+def h():
+    turn_left()
+    for i in range(6):
+        put_beeper()
+        move()
+    put_beeper()    
+    for i in range(3):
+        goback()
+    turn_right()
+    move()
+    put_beeper()
+    turn_right()
+    while front_is_clear():
+        move()
+    turn_left()
+    move()
+    turn_left()
+    for i in range(6):
+        put_beeper()
+        move()
+    put_beeper()
+    turn_left()
+    turn_left()
+    while front_is_clear():
+        move()
+    turn_left()
+    for i in range(2):
+        move()
+def e():
+    placethreebeepers()
+    for i in range(3):
+        goback()
+    for i in range(2):
+        turn_left()
+        move()
+        for j in range(2): 
+            put_beeper()
+            move()
+        turn_right()
+        placethreebeepers()
+        for j in range(3):
+            goback()
+    turn_right()
+    while front_is_clear():
+        move()
+    turn_left()
+    for i in range(4):
+        move()
+def r():
+    turn_left()
+    for i in range(6):
+        put_beeper()
+        move()
+    put_beeper()
+    turn_right()
+    move()
+    placethreebeepers()
+    goback()
+    turn_right()
+    for i in range(3):
+        move()
+        put_beeper()
+    turn_right()
+    move()
+    for i in range(2):
+        put_beeper()
+        move()
+    turn_left()
+    turn_left()
+    for i in range(3):
+        diagonallyrightdown()
+        put_beeper()
+    move()
+    
+def main():
+  m()
+  i()
+  h()
+  for k in range(2):
+    e()
+  r()  
+# don't change this code
+if __name__ == '__main__':
+    main()
